@@ -13,6 +13,7 @@
  * @param remPerpx    每rem对应的px大小
  */
 function remRest(doc, win, designW, designH, remPerpx) {
+  // document对象
   let docEl = doc.documentElement;
   let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
   let recalc = function() {
