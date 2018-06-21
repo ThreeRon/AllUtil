@@ -70,7 +70,7 @@ let getEndTime = function (endTime) {
 /*               字符串操作                                                   
 /*********************************************************************/
 /**
- * 获取字符串长度，中文按3个字符计算
+ * utf8获取字符串长度，中文按3个字符计算
  * <li>使用：
  * <br>getStrLeng('在z') // 4
  * @param {*} str
@@ -89,6 +89,17 @@ let getStrLeng = function (str) {
     }
   }
   return realLength;
+}
+
+/**
+ * utf8:获取字符串长度，中文按3个字符计算
+ * <li>使用：
+ * <br>getStrLeng('在z') // 4
+ * @param {*} str
+ */
+function lengthInUtf8Bytes(str) {
+  var m = encodeURIComponent(str).match(/%[89ABab]/g);
+  return str.length + (m ? m.length : 0);
 }
 
 /*********************************************************************/
