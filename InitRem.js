@@ -4,6 +4,8 @@
  * 说明：脚本加载完即可执行，不要到页面资源和dom结构渲染完才执行
  */
 
+
+
 /**
  * rem 随屏幕变化设置
  * @param doc         document对象
@@ -13,6 +15,7 @@
  * @param remPerpx    每rem对应的px大小
  */
 function remRest(doc, win, designW, designH, remPerpx) {
+  // document对象
   let docEl = doc.documentElement;
   let resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
   let recalc = function() {
